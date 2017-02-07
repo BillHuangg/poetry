@@ -1,0 +1,15 @@
+PODS:
+  - MBProgressHUD (1.0.0)
+  - Reachability (3.2)
+
+DEPENDENCIES:
+  - MBProgressHUD (~> 1.0.0)
+  - Reachability (~> 3.2)
+
+SPEC CHECKSUMS:
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
+
+PODFILE CHECKSUM: 8385fb7be65e5eca34cb9359803e90db522024af
+
+COCOAPODS: 1.1.1
