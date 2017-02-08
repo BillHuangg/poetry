@@ -17,6 +17,14 @@
 		A907BA061E4A233C0059112B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A907BA041E4A233C0059112B /* LaunchScreen.storyboard */; };
 		A907BA111E4A233C0059112B /* poetryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A907BA101E4A233C0059112B /* poetryTests.m */; };
 		A907BA1C1E4A233C0059112B /* poetryUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A907BA1B1E4A233C0059112B /* poetryUITests.m */; };
+		A94FA3E31E4B6F27000797C2 /* AlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A94FA3E21E4B6F27000797C2 /* AlbumViewController.m */; };
+		A94FA3E91E4B6F4A000797C2 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A94FA3E81E4B6F4A000797C2 /* CameraViewController.m */; };
+		A94FA3ED1E4B6F5F000797C2 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A94FA3EC1E4B6F5F000797C2 /* SettingViewController.m */; };
+		A94FA3F01E4B721A000797C2 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A94FA3EF1E4B721A000797C2 /* CoreMedia.framework */; };
+		A94FA3F21E4B7220000797C2 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A94FA3F11E4B7220000797C2 /* CoreVideo.framework */; };
+		A94FA3F41E4B7226000797C2 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A94FA3F31E4B7226000797C2 /* OpenGLES.framework */; };
+		A94FA3F61E4B722E000797C2 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A94FA3F51E4B722E000797C2 /* AVFoundation.framework */; };
+		A94FA3F81E4B7234000797C2 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A94FA3F71E4B7234000797C2 /* QuartzCore.framework */; };
 		D63BE4383F9D00D226BF107A /* libPods-poetry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 05A63336AB3514DC921DC0DA /* libPods-poetry.a */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +69,17 @@
 		A907BA171E4A233C0059112B /* poetryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = poetryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A907BA1B1E4A233C0059112B /* poetryUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = poetryUITests.m; sourceTree = "<group>"; };
 		A907BA1D1E4A233C0059112B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A94FA3E11E4B6F27000797C2 /* AlbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumViewController.h; sourceTree = "<group>"; };
+		A94FA3E21E4B6F27000797C2 /* AlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumViewController.m; sourceTree = "<group>"; };
+		A94FA3E71E4B6F4A000797C2 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
+		A94FA3E81E4B6F4A000797C2 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
+		A94FA3EB1E4B6F5F000797C2 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		A94FA3EC1E4B6F5F000797C2 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		A94FA3EF1E4B721A000797C2 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		A94FA3F11E4B7220000797C2 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		A94FA3F31E4B7226000797C2 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		A94FA3F51E4B722E000797C2 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		A94FA3F71E4B7234000797C2 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		C76F266FCA139BDA2898E14E /* libPods-poetryUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-poetryUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D11CC939F22E5ECC553B1AAC /* Pods-poetryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-poetryTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-poetryTests/Pods-poetryTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -70,6 +89,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A94FA3F81E4B7234000797C2 /* QuartzCore.framework in Frameworks */,
+				A94FA3F61E4B722E000797C2 /* AVFoundation.framework in Frameworks */,
+				A94FA3F41E4B7226000797C2 /* OpenGLES.framework in Frameworks */,
+				A94FA3F21E4B7220000797C2 /* CoreVideo.framework in Frameworks */,
+				A94FA3F01E4B721A000797C2 /* CoreMedia.framework in Frameworks */,
 				D63BE4383F9D00D226BF107A /* libPods-poetry.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -119,6 +143,7 @@
 		A907B9EA1E4A233C0059112B = {
 			isa = PBXGroup;
 			children = (
+				A94FA3EE1E4B720D000797C2 /* Frameworks */,
 				A907B9F51E4A233C0059112B /* poetry */,
 				A907BA0F1E4A233C0059112B /* poetryTests */,
 				A907BA1A1E4A233C0059112B /* poetryUITests */,
@@ -141,6 +166,9 @@
 		A907B9F51E4A233C0059112B /* poetry */ = {
 			isa = PBXGroup;
 			children = (
+				A94FA3E61E4B6F38000797C2 /* model */,
+				A94FA3E51E4B6F33000797C2 /* view */,
+				A94FA3E41E4B6F2D000797C2 /* controller */,
 				A907B9F91E4A233C0059112B /* AppDelegate.h */,
 				A907B9FA1E4A233C0059112B /* AppDelegate.m */,
 				A907B9FC1E4A233C0059112B /* ViewController.h */,
@@ -178,6 +206,45 @@
 				A907BA1D1E4A233C0059112B /* Info.plist */,
 			);
 			path = poetryUITests;
+			sourceTree = "<group>";
+		};
+		A94FA3E41E4B6F2D000797C2 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				A94FA3E11E4B6F27000797C2 /* AlbumViewController.h */,
+				A94FA3E21E4B6F27000797C2 /* AlbumViewController.m */,
+				A94FA3E71E4B6F4A000797C2 /* CameraViewController.h */,
+				A94FA3E81E4B6F4A000797C2 /* CameraViewController.m */,
+				A94FA3EB1E4B6F5F000797C2 /* SettingViewController.h */,
+				A94FA3EC1E4B6F5F000797C2 /* SettingViewController.m */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
+		A94FA3E51E4B6F33000797C2 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		A94FA3E61E4B6F38000797C2 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		A94FA3EE1E4B720D000797C2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A94FA3F71E4B7234000797C2 /* QuartzCore.framework */,
+				A94FA3F51E4B722E000797C2 /* AVFoundation.framework */,
+				A94FA3F31E4B7226000797C2 /* OpenGLES.framework */,
+				A94FA3F11E4B7220000797C2 /* CoreVideo.framework */,
+				A94FA3EF1E4B721A000797C2 /* CoreMedia.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -461,9 +528,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A94FA3E91E4B6F4A000797C2 /* CameraViewController.m in Sources */,
+				A94FA3E31E4B6F27000797C2 /* AlbumViewController.m in Sources */,
 				A907B9FE1E4A233C0059112B /* ViewController.m in Sources */,
 				A907B9FB1E4A233C0059112B /* AppDelegate.m in Sources */,
 				A907B9F81E4A233C0059112B /* main.m in Sources */,
+				A94FA3ED1E4B6F5F000797C2 /* SettingViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
