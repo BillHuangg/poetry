@@ -256,6 +256,7 @@
 		A94FA4AB1E4B7364000797C2 /* libGPUImage.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGPUImage.a; sourceTree = "<group>"; };
 		A94FA4AF1E4B8184000797C2 /* NSObject+FormatLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+FormatLog.h"; sourceTree = "<group>"; };
 		A94FA4B01E4B8184000797C2 /* NSObject+FormatLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+FormatLog.m"; sourceTree = "<group>"; };
+		A94FA4B21E50762A000797C2 /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
 		C76F266FCA139BDA2898E14E /* libPods-poetryUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-poetryUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D11CC939F22E5ECC553B1AAC /* Pods-poetryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-poetryTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-poetryTests/Pods-poetryTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -635,6 +636,7 @@
 			children = (
 				A94FA4AF1E4B8184000797C2 /* NSObject+FormatLog.h */,
 				A94FA4B01E4B8184000797C2 /* NSObject+FormatLog.m */,
+				A94FA4B21E50762A000797C2 /* Constant.h */,
 			);
 			name = utility;
 			sourceTree = "<group>";
