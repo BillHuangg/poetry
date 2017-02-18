@@ -8,6 +8,7 @@
 
 #import "CameraViewController.h"
 #import "NSObject+FormatLog.h"
+#import "UIImage+Utility.h"
 #import "Constant.h"
 #import "MBProgressHUD.h"
 #import "GPUImage.h"
@@ -57,10 +58,18 @@ typedef enum {
     _currentCameraViewRectType = CAMERA_VIEW_RECT_VIEW_11;
     
     CGRect rectStatus = [[UIApplication sharedApplication] statusBarFrame];
-    CGRect rect = CGRectMake(0, CameraViewMarginTop + rectStatus.size.height, self.view.frame.size.width, self.view.frame.size.width);
+    
+    CGRect rect = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.width / 3 * 4);
     _cameraView = [[GPUImageView alloc] initWithFrame:rect];
     _cameraView.fillMode = kGPUImageFillModePreserveAspectRatioAndFill;
 
+    // mask
+    CALayer *renderRectMaskLayer = [CALayer layer];
+    renderRectMaskLayer.frame = CGRectMake(0, CameraViewMarginTop + rectStatus.size.height, self.view.frame.size.width, self.view.frame.size.width);
+    renderRectMaskLayer.backgroundColor = [UIColor blackColor].CGColor;
+    _cameraView.layer.mask = renderRectMaskLayer;
+    _cameraView.layer.masksToBounds = YES;
+    
     [self.view addSubview:_cameraView];
 }
 
@@ -69,10 +78,13 @@ typedef enum {
     _videoCamera = [[GPUImageVideoCamera alloc] initWithSessionPreset:AVCaptureSessionPresetPhoto cameraPosition:AVCaptureDevicePositionBack];
     
     _videoCamera.outputImageOrientation = UIInterfaceOrientationPortrait;
-    _videoCamera.horizontallyMirrorFrontFacingCamera = NO;
+    _videoCamera.horizontallyMirrorFrontFacingCamera = YES;
     _videoCamera.horizontallyMirrorRearFacingCamera = NO;
     
-    [_videoCamera addTarget:_cameraView];
+    _filter = [[GPUImageFilter alloc] init];
+    [_filter addTarget:_cameraView];
+    
+    [_videoCamera addTarget:_filter];
     [_videoCamera startCameraCapture];
 }
 
@@ -82,7 +94,6 @@ typedef enum {
     [self setupTopButtons];
     [self setupBottomButtons];
 }
-
 
 - (void) setupTopButtons {
     
@@ -97,13 +108,12 @@ typedef enum {
     // toggle flash
     _toggleCameraFlashButton = [self generateButton:@"flash" rect:CGRectMake(180, 20, 60, 40) action:@selector(toggleCameraFlashEvent)];
     [self.view addSubview:_toggleCameraFlashButton];
-    
 }
 
 - (void) setupBottomButtons {
     
     float x = ScreenWidth / 2 - 40;
-    float y = (ScreenHeight + _cameraView.frame.size.height + _cameraView.frame.origin.y) / 2 - 40;
+    float y = (ScreenHeight + _cameraView.frame.size.height) / 2 - 40;
     
     // open album
     _albumButton = [self generateButton:@"album" rect:CGRectMake(x - 100, y, 80, 80) action:@selector(albumOpenEvent)];
@@ -115,9 +125,11 @@ typedef enum {
     _photoCaptureButton.layer.cornerRadius = 40;
     [self.view addSubview:_photoCaptureButton];
     
+    
+    // no filter feature, it will show in edit view
     // filter view
-    _filterButton = [self generateButton:@"filter" rect:CGRectMake(x + 100, y, 80, 80) action:@selector(filterOpenEvent)];
-    [self.view addSubview:_filterButton];
+//    _filterButton = [self generateButton:@"filter" rect:CGRectMake(x + 100, y, 80, 80) action:@selector(filterOpenEvent)];
+//    [self.view addSubview:_filterButton];
 }
 
 - (UIButton*)generateButton:(NSString*) name rect:(CGRect) rect action:(SEL)action {
@@ -152,16 +164,14 @@ typedef enum {
     }
     
     // change view
-    _cameraView.frame = rect;
+    [self viewRectAnimation:_cameraView ToRect:rect];
     
     [self FormatLogWithClassNameAndMessage:@"toggleCameraRectEvent"];
 }
 
 - (void)toggleCameraRotationEvent {
     
-    // TODO: front, mirrored
     [_videoCamera rotateCamera];
-    
     [self FormatLogWithClassNameAndMessage:@"toggleCameraRotationEvent"];
 }
 
@@ -172,8 +182,14 @@ typedef enum {
 
 - (void)photoCaptureEvent {
     
-    [_videoCamera useNextFrameForImageCapture];
-    [self saveCameraPhotoToAlbum: _videoCamera.imageFromCurrentFramebuffer];
+    [_filter useNextFrameForImageCapture];
+    UIImage *captureImage = _filter.imageFromCurrentFramebuffer;
+    if (_currentCameraViewRectType == CAMERA_VIEW_RECT_VIEW_11) {
+        // resize image
+        captureImage = [captureImage clip:CGRectMake(0, (captureImage.size.height - captureImage.size.width) / 2, captureImage.size.width, captureImage.size.width)];
+    }
+    
+    [self saveCameraPhotoToAlbum: captureImage];
     [self FormatLogWithClassNameAndMessage:@"photoCaptureEvent"];
 }
 
@@ -189,10 +205,10 @@ typedef enum {
     [self FormatLogWithClassNameAndMessage:@"albumOpenEvent"];
 }
 
-- (void)filterOpenEvent {
-    
-    [self FormatLogWithClassNameAndMessage:@"filterOpenEvent"];
-}
+//- (void)filterOpenEvent {
+//    
+//    [self FormatLogWithClassNameAndMessage:@"filterOpenEvent"];
+//}
 
 # pragma mark - Logic
 
@@ -200,6 +216,11 @@ typedef enum {
 
 # pragma mark - UIImagePickerController Delegate
 - (void)saveCameraPhotoToAlbum:(UIImage *)image {
+    
+    if(IsNilOrNull(image)) {
+        [self FormatLogWithClassNameAndMessage:@"Image is nil, can't be saved"];
+        return;
+    }
     
     UIImageWriteToSavedPhotosAlbum(image, self, @selector(image:didFinishSavingWithError:contextInfo:), NULL);
 }
@@ -232,6 +253,23 @@ typedef enum {
 
     [self FormatLogWithClassNameAndMessage:@"imagePickerControllerDidCancel"];
 }
+
+# pragma mark - View Animations
+- (void) viewRectAnimation:(UIView*) view ToRect:(CGRect) toRect {
+        
+    self.view.userInteractionEnabled = NO;
+    [UIView animateWithDuration: 0.3f
+                          delay: 0
+                        options: UIViewAnimationOptionLayoutSubviews | UIViewAnimationOptionCurveEaseOut
+                     animations: ^{
+                         _cameraView.layer.mask.frame = toRect;
+                     }
+                     completion: ^(BOOL finish){
+                         self.view.userInteractionEnabled = YES;
+                     }];
+}
+
+# pragma mark - Utility
 
 
 @end

@@ -16,7 +16,7 @@
 #define IsArrayEmpty(_ref)    (((_ref) == nil) || ([(_ref) isEqual:[NSNull null]]) ||([(_ref) count] == 0))
 
 
-//便捷方式创建NSNumber类型
+// 创建NSNumber类型
 #undef	__INT
 #define __INT( __x )			[NSNumber numberWithInt:(NSInteger)__x]
 
@@ -29,6 +29,6 @@
 #undef	__DOUBLE
 #define	__DOUBLE( __x )			[NSNumber numberWithDouble:(double)__x]
 
-//便捷创建NSString
+// 创建NSString
 #undef  __String
 #define __String( __x, __y )    [NSString stringWithFormat:__x, __y]

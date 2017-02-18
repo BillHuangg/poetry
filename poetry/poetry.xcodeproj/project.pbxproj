@@ -16,6 +16,7 @@
 		A907BA061E4A233C0059112B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A907BA041E4A233C0059112B /* LaunchScreen.storyboard */; };
 		A907BA111E4A233C0059112B /* poetryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A907BA101E4A233C0059112B /* poetryTests.m */; };
 		A907BA1C1E4A233C0059112B /* poetryUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A907BA1B1E4A233C0059112B /* poetryUITests.m */; };
+		A92ADDBB1E58654E0029CD7A /* UIImage+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = A92ADDBA1E58654E0029CD7A /* UIImage+Utility.m */; };
 		A94FA3E31E4B6F27000797C2 /* AlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A94FA3E21E4B6F27000797C2 /* AlbumViewController.m */; };
 		A94FA3E91E4B6F4A000797C2 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A94FA3E81E4B6F4A000797C2 /* CameraViewController.m */; };
 		A94FA3ED1E4B6F5F000797C2 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A94FA3EC1E4B6F5F000797C2 /* SettingViewController.m */; };
@@ -68,6 +69,8 @@
 		A907BA171E4A233C0059112B /* poetryUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = poetryUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A907BA1B1E4A233C0059112B /* poetryUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = poetryUITests.m; sourceTree = "<group>"; };
 		A907BA1D1E4A233C0059112B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A92ADDB91E58654E0029CD7A /* UIImage+Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Utility.h"; sourceTree = "<group>"; };
+		A92ADDBA1E58654E0029CD7A /* UIImage+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Utility.m"; sourceTree = "<group>"; };
 		A94FA3E11E4B6F27000797C2 /* AlbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumViewController.h; sourceTree = "<group>"; };
 		A94FA3E21E4B6F27000797C2 /* AlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumViewController.m; sourceTree = "<group>"; };
 		A94FA3E71E4B6F4A000797C2 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
@@ -266,9 +269,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A94FA3F41E4B7226000797C2 /* OpenGLES.framework in Frameworks */,
 				A94FA3F81E4B7234000797C2 /* QuartzCore.framework in Frameworks */,
 				A94FA3F61E4B722E000797C2 /* AVFoundation.framework in Frameworks */,
-				A94FA3F41E4B7226000797C2 /* OpenGLES.framework in Frameworks */,
 				A94FA4AC1E4B7365000797C2 /* libGPUImage.a in Frameworks */,
 				A94FA3F21E4B7220000797C2 /* CoreVideo.framework in Frameworks */,
 				A94FA3F01E4B721A000797C2 /* CoreMedia.framework in Frameworks */,
@@ -637,6 +640,8 @@
 				A94FA4AF1E4B8184000797C2 /* NSObject+FormatLog.h */,
 				A94FA4B01E4B8184000797C2 /* NSObject+FormatLog.m */,
 				A94FA4B21E50762A000797C2 /* Constant.h */,
+				A92ADDB91E58654E0029CD7A /* UIImage+Utility.h */,
+				A92ADDBA1E58654E0029CD7A /* UIImage+Utility.m */,
 			);
 			name = utility;
 			sourceTree = "<group>";
@@ -922,6 +927,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A92ADDBB1E58654E0029CD7A /* UIImage+Utility.m in Sources */,
 				A94FA3E91E4B6F4A000797C2 /* CameraViewController.m in Sources */,
 				A94FA3E31E4B6F27000797C2 /* AlbumViewController.m in Sources */,
 				A907B9FB1E4A233C0059112B /* AppDelegate.m in Sources */,
