@@ -84,6 +84,57 @@
             </objects>
             <point key="canvasLocation" x="878" y="113"/>
         </scene>
+        <!--Photo Edit View Controller-->
+        <scene sceneID="GiK-fR-tmH">
+            <objects>
+                <viewController storyboardIdentifier="PhotoEditViewControllerID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="phF-s0-ZA3" customClass="PhotoEditViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oEL-FN-DTi"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ery-U7-9ju"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="m7Q-9B-h7x">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="H8l-ce-owJ">
+                                <rect key="frame" x="0.0" y="70" width="375" height="537"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PZe-7F-qbS">
+                                <rect key="frame" x="0.0" y="607" width="375" height="60"/>
+                                <color key="backgroundColor" red="0.41500870362205616" green="0.81300774244173712" blue="0.89782395287958117" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Xjl-00-KQD"/>
+                                </constraints>
+                            </view>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fMb-GK-yOz">
+                                <rect key="frame" x="0.0" y="547" width="375" height="60"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="2U0-uE-A1y"/>
+                                    <constraint firstAttribute="height" constant="60" id="cBs-F0-EMy"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="fMb-GK-yOz" secondAttribute="trailing" id="6qR-bg-YXb"/>
+                            <constraint firstItem="H8l-ce-owJ" firstAttribute="leading" secondItem="m7Q-9B-h7x" secondAttribute="leading" id="6rL-cZ-YrA"/>
+                            <constraint firstItem="Ery-U7-9ju" firstAttribute="top" secondItem="PZe-7F-qbS" secondAttribute="bottom" id="7cO-FI-3Mb"/>
+                            <constraint firstAttribute="trailing" secondItem="H8l-ce-owJ" secondAttribute="trailing" id="ENE-8B-12u"/>
+                            <constraint firstAttribute="trailing" secondItem="PZe-7F-qbS" secondAttribute="trailing" id="Pyn-I6-Ud6"/>
+                            <constraint firstItem="PZe-7F-qbS" firstAttribute="top" secondItem="H8l-ce-owJ" secondAttribute="bottom" id="V40-0o-0pT"/>
+                            <constraint firstItem="fMb-GK-yOz" firstAttribute="leading" secondItem="m7Q-9B-h7x" secondAttribute="leading" id="bUb-qc-JAQ"/>
+                            <constraint firstItem="PZe-7F-qbS" firstAttribute="leading" secondItem="m7Q-9B-h7x" secondAttribute="leading" id="kvA-NS-2pf"/>
+                            <constraint firstItem="PZe-7F-qbS" firstAttribute="top" secondItem="fMb-GK-yOz" secondAttribute="bottom" id="nqo-4j-c1x"/>
+                            <constraint firstItem="H8l-ce-owJ" firstAttribute="top" secondItem="oEL-FN-DTi" secondAttribute="bottom" constant="50" id="oNs-c1-FuR"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qUc-Ai-ddQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1756.521739130435" y="112.50000000000001"/>
+        </scene>
         <!--Setting View Controller-->
         <scene sceneID="5x8-e5-Cpp">
             <objects>

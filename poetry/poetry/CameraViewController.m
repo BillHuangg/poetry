@@ -15,10 +15,10 @@
 
 #define CameraViewMarginTop 44
 
-typedef enum {
+typedef NS_ENUM(NSInteger, CameraViewRectType) {
     CAMERA_VIEW_RECT_VIEW_11,
     CAMERA_VIEW_RECT_VIEW_34
-} CameraViewRectType;
+};
 
 @interface CameraViewController () {
     GPUImageVideoCamera *_videoCamera;
@@ -125,11 +125,9 @@ typedef enum {
     _photoCaptureButton.layer.cornerRadius = 40;
     [self.view addSubview:_photoCaptureButton];
     
-    
-    // no filter feature, it will show in edit view
     // filter view
-//    _filterButton = [self generateButton:@"filter" rect:CGRectMake(x + 100, y, 80, 80) action:@selector(filterOpenEvent)];
-//    [self.view addSubview:_filterButton];
+    _filterButton = [self generateButton:@"filter" rect:CGRectMake(x + 100, y, 80, 80) action:@selector(filterOpenEvent)];
+    [self.view addSubview:_filterButton];
 }
 
 - (UIButton*)generateButton:(NSString*) name rect:(CGRect) rect action:(SEL)action {
@@ -205,10 +203,10 @@ typedef enum {
     [self FormatLogWithClassNameAndMessage:@"albumOpenEvent"];
 }
 
-//- (void)filterOpenEvent {
-//    
-//    [self FormatLogWithClassNameAndMessage:@"filterOpenEvent"];
-//}
+- (void)filterOpenEvent {
+    
+    [self FormatLogWithClassNameAndMessage:@"filterOpenEvent"];
+}
 
 # pragma mark - Logic
 

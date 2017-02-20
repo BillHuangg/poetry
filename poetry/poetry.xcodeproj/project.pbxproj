@@ -17,6 +17,7 @@
 		A907BA111E4A233C0059112B /* poetryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A907BA101E4A233C0059112B /* poetryTests.m */; };
 		A907BA1C1E4A233C0059112B /* poetryUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = A907BA1B1E4A233C0059112B /* poetryUITests.m */; };
 		A92ADDBB1E58654E0029CD7A /* UIImage+Utility.m in Sources */ = {isa = PBXBuildFile; fileRef = A92ADDBA1E58654E0029CD7A /* UIImage+Utility.m */; };
+		A92ADDBE1E5B438E0029CD7A /* PhotoEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A92ADDBD1E5B438E0029CD7A /* PhotoEditViewController.m */; };
 		A94FA3E31E4B6F27000797C2 /* AlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A94FA3E21E4B6F27000797C2 /* AlbumViewController.m */; };
 		A94FA3E91E4B6F4A000797C2 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A94FA3E81E4B6F4A000797C2 /* CameraViewController.m */; };
 		A94FA3ED1E4B6F5F000797C2 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A94FA3EC1E4B6F5F000797C2 /* SettingViewController.m */; };
@@ -71,6 +72,8 @@
 		A907BA1D1E4A233C0059112B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A92ADDB91E58654E0029CD7A /* UIImage+Utility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Utility.h"; sourceTree = "<group>"; };
 		A92ADDBA1E58654E0029CD7A /* UIImage+Utility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Utility.m"; sourceTree = "<group>"; };
+		A92ADDBC1E5B438E0029CD7A /* PhotoEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoEditViewController.h; sourceTree = "<group>"; };
+		A92ADDBD1E5B438E0029CD7A /* PhotoEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoEditViewController.m; sourceTree = "<group>"; };
 		A94FA3E11E4B6F27000797C2 /* AlbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumViewController.h; sourceTree = "<group>"; };
 		A94FA3E21E4B6F27000797C2 /* AlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumViewController.m; sourceTree = "<group>"; };
 		A94FA3E71E4B6F4A000797C2 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
@@ -398,6 +401,8 @@
 				A94FA3E81E4B6F4A000797C2 /* CameraViewController.m */,
 				A94FA3EB1E4B6F5F000797C2 /* SettingViewController.h */,
 				A94FA3EC1E4B6F5F000797C2 /* SettingViewController.m */,
+				A92ADDBC1E5B438E0029CD7A /* PhotoEditViewController.h */,
+				A92ADDBD1E5B438E0029CD7A /* PhotoEditViewController.m */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -930,6 +935,7 @@
 				A92ADDBB1E58654E0029CD7A /* UIImage+Utility.m in Sources */,
 				A94FA3E91E4B6F4A000797C2 /* CameraViewController.m in Sources */,
 				A94FA3E31E4B6F27000797C2 /* AlbumViewController.m in Sources */,
+				A92ADDBE1E5B438E0029CD7A /* PhotoEditViewController.m in Sources */,
 				A907B9FB1E4A233C0059112B /* AppDelegate.m in Sources */,
 				A907B9F81E4A233C0059112B /* main.m in Sources */,
 				A94FA3ED1E4B6F5F000797C2 /* SettingViewController.m in Sources */,
