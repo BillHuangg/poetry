@@ -8,7 +8,11 @@
 
 #import "PhotoEditViewController.h"
 
-@interface PhotoEditViewController ()
+@interface PhotoEditViewController () {
+    UIImage *_originalImage;
+    UIImage *_editedImage;
+    ImageSourceType _imageSourceType;
+}
 
 @end
 
@@ -16,22 +20,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.imagePreview.image = _originalImage;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+# pragma mark - Setup Data Functions
+- (void) setupOriginalImage:(UIImage *)image From:(ImageSourceType) type {
+    
+    _originalImage = image;
+    _imageSourceType = type;
+    
 }
-*/
 
 @end

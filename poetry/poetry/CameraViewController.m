@@ -12,13 +12,10 @@
 #import "Constant.h"
 #import "MBProgressHUD.h"
 #import "GPUImage.h"
+#import "Enum.h"
+#import "PhotoEditViewController.h"
 
 #define CameraViewMarginTop 44
-
-typedef NS_ENUM(NSInteger, CameraViewRectType) {
-    CAMERA_VIEW_RECT_VIEW_11,
-    CAMERA_VIEW_RECT_VIEW_34
-};
 
 @interface CameraViewController () {
     GPUImageVideoCamera *_videoCamera;
@@ -180,6 +177,8 @@ typedef NS_ENUM(NSInteger, CameraViewRectType) {
 
 - (void)photoCaptureEvent {
     
+    [self FormatLogWithClassNameAndMessage:@"photoCaptureEvent"];
+    
     [_filter useNextFrameForImageCapture];
     UIImage *captureImage = _filter.imageFromCurrentFramebuffer;
     if (_currentCameraViewRectType == CAMERA_VIEW_RECT_VIEW_11) {
@@ -187,8 +186,8 @@ typedef NS_ENUM(NSInteger, CameraViewRectType) {
         captureImage = [captureImage clip:CGRectMake(0, (captureImage.size.height - captureImage.size.width) / 2, captureImage.size.width, captureImage.size.width)];
     }
     
-    [self saveCameraPhotoToAlbum: captureImage];
-    [self FormatLogWithClassNameAndMessage:@"photoCaptureEvent"];
+    [self jumpToEditViewControllerWithImage:captureImage From:IMAGE_FROM_CAPTURE];
+    
 }
 
 - (void)albumOpenEvent {
@@ -209,7 +208,15 @@ typedef NS_ENUM(NSInteger, CameraViewRectType) {
 }
 
 # pragma mark - Logic
-
+- (void) jumpToEditViewControllerWithImage:(UIImage *) image From:(ImageSourceType) type {
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        
+        PhotoEditViewController *tempController = (PhotoEditViewController*)[self.storyboard instantiateViewControllerWithIdentifier:@"PhotoEditViewControllerID"];
+        [tempController setupOriginalImage:image From:type];
+        [self presentViewController:tempController animated:YES completion:nil];
+    });
+}
 # pragma mark - Functions
 
 # pragma mark - UIImagePickerController Delegate
@@ -242,7 +249,8 @@ typedef NS_ENUM(NSInteger, CameraViewRectType) {
     UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
     [self FormatLogWithClassNameAndMessage:__String(@"Get Image, name: %@", image.description)];
     
-    // TODO: go to photo edit view
+    // go to photo edit view
+    [self jumpToEditViewControllerWithImage:image From:IMAGE_FROM_CAPTURE];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {

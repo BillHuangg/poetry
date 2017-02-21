@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Enum.h"
 
 @interface PhotoEditViewController : UIViewController
+
+
+@property(nonatomic, retain) IBOutlet UIImageView *imagePreview;
+
+- (void) setupOriginalImage:(UIImage *)image From:(ImageSourceType) type;
 
 @end
