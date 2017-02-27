@@ -12,7 +12,7 @@
 @interface PhotoEditViewController : UIViewController
 
 
-@property(nonatomic, retain) IBOutlet UIImageView *imagePreview;
+@property(nonatomic, weak) IBOutlet UIImageView *imagePreview;
 
 - (void) setupOriginalImage:(UIImage *)image From:(ImageSourceType) type;
 
